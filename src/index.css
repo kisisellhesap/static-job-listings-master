@@ -265,8 +265,8 @@ button:hover {
   .filterList {
     overflow-x:scroll;
   }
-  .filterList::scrollbar{
-    visibility:hidden;
+  .filterList::-webkit-scrollbar{
+    overflow:hidden;
   }
 
   .userList {
