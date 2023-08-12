@@ -24,13 +24,13 @@ function App() {
   return (
 
     <UserContext.Provider value={{ data, setData, filterData, filterSetData, onClick }}>
-      <div className="App">
+
         <div className='userContainer'>
           <UserFilter />
           <UserList />
         </div>
 
-      </div>
+
     </UserContext.Provider>
 
   );
