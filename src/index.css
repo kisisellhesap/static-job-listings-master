@@ -262,6 +262,13 @@ button:hover {
     gap: 4rem;
   }
 
+  .filterList {
+    overflow-x:scroll;
+  }
+  .filterList::scrollbar{
+    visibility:hidden;
+  }
+
   .userList {
     gap: 4rem;
   }
