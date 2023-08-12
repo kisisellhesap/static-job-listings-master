@@ -1,13 +1,296 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+
+  --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+  --Light-Grayish-Cyan-Background: hsl(180, 52%, 96%);
+  --Light-Grayish-Cyan-Filter-Tablets: hsl(180, 31%, 95%);
+  --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+  --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+
+body {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  min-height: 100vh;
+  background: var(--Light-Grayish-Cyan-Background);
+  background-repeat: no-repeat;
+  user-select: none;
+}
+
+body::after {
+  content: "";
+  width: 100%;
+  height: 150px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-image: url("../public/images/bg-header-desktop.svg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 150px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: var(--Desaturated-Dark-Cyan);
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-size: cover;
+}
+
+
+.userContainer {
+  width: 70%;
+  min-width: 825px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transform: translate(0px, 110px);
+
+  /* background-color: yellow; */
+}
+
+.userList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.userComponent {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px 0px hsla(180, 29%, 50%, .2);
+}
+
+.userComponent:nth-child(1),
+.userComponent:nth-child(2) {
+  border-left: 7px solid var(--Desaturated-Dark-Cyan);
+}
+
+.generalInfo {
+  /* background-color: aliceblue; */
+  display: flex;
+  gap: 1.5rem;
+}
+
+.generalInfo img {
+  width: 80px;
+  height: 70px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .7rem;
+}
+
+.topInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+
+.new {
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: .4rem;
+  border-radius: 10px;
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.featured {
+  background-color: var(--Very-Dark-Grayish-Cyan);
+  padding: .4rem;
+  border-radius: 10px;
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+  margin-left: -.5rem;
+}
+
+.company {
+  font-weight: 700;
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.position {
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.position:hover {
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.bottomInfo {
+  color: var(--Dark-Grayish-Cyan);
+  display: flex;
+  gap: .7rem;
+  font-size: .9rem;
+}
+
+.roleLevelLang {
+
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.tools,
+.languages {
+  display: flex;
+  gap: 1rem;
+}
+
+
+button {
+  outline: none;
+  border: none;
+  padding: .3rem .5rem;
+  background-color: var(--Light-Grayish-Cyan-Background);
+  color: var(--Desaturated-Dark-Cyan);
+  font-weight: 700;
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: var(--Desaturated-Dark-Cyan);
+  color: white;
+}
+
+
+
+.userFilter {
+  background-color: white;
+  display: flex;
+  min-height: 62px;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px 0px hsla(180, 29%, 50%, .2);
+}
+
+.filterList {
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: hidden;
+  position: relative;
+
+}
+
+.filterBtn {
+  border: none;
+  background-color: var(--Light-Grayish-Cyan-Background);
+  color: var(--Desaturated-Dark-Cyan);
+  font-weight: 700;
+  font-size: .8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.filterName {
+  padding: .3rem .5rem;
+  pointer-events: none;
+
+}
+
+.removeIcon {
+  font-size: 20px;
+  color: white;
+  padding: .3rem .5rem;
+  background-color: var(--Desaturated-Dark-Cyan);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.removeIcon:hover {
+  background-color: var(--Very-Dark-Grayish-Cyan);
+}
+
+
+.clearFilter {
+  margin-left: auto;
+  background-color: transparent !important;
+  color: var(--Dark-Grayish-Cyan) !important;
+}
+
+.clearFilter:hover {
+  text-decoration: underline;
+  color: var(--Desaturated-Dark-Cyan) !important;
+}
+
+.d-none {
+  visibility: hidden;
+}
+
+
+@media screen and (max-width:880px) {
+
+  .App {
+    margin-bottom: 2rem;
+  }
+
+  .userContainer {
+    min-width: 290px;
+    gap: 4rem;
+  }
+
+  .userList {
+    gap: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .userComponent {
+    flex-direction: column;
+    padding-top: 0 !important;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .generalInfo {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: -2rem;
+  }
+
+  .roleLevelLang {
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .userFilter {
+    padding: 1rem;
+  }
 }
